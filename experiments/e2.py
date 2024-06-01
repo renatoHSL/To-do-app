@@ -1,11 +1,4 @@
+ips = ['100.122.133.105', '100.122.133.111']
+user_input = input("Enter the index of the IP you want: ")
 
-
-while True:
-    name = input("What's your name: ")
-    print(name.capitalize())
-    countries = []
-
-    while True:
-        country = input("Enter the country: ")
-        countries.append(country)
-        print(countries)
+print(ips[int(user_input)])
