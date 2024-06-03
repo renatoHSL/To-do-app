@@ -6,7 +6,7 @@ while True:
         case 'add':
             todo = input("Enter a todo: ") + "\n"
 
-            file = open('todo.txt', 'r')
+            file = open('todos.txt', 'r')
             todos = file.readlines()
             file.close()
 
@@ -17,11 +17,12 @@ while True:
             file.close()
 
         case 'show':
-            file = open('todo.txt', 'r')
+            file = open('todos.txt', 'r')
             todos = file.readlines()
             file.close()
 
             for index, item in enumerate(todos):
+                item = item.strip('\n')
                 row = f"{index + 1}-{item}"
                 print(row)
         case 'edit':
