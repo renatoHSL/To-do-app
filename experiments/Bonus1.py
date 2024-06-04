@@ -1,2 +1,4 @@
-my_answer = input("What is your answer?")
-answers = ['Yes', 'No', 'Yes', 'No', my_answer]
+with open("file.txt", 'r') as file:
+    content = file.read()
+    print(content)
+    print(len(content))
