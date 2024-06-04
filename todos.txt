@@ -1,3 +1,5 @@
 clean
-trash
-fix computerhello
+trashlook
+say
+clean
+wash
