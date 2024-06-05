@@ -1,29 +1,11 @@
-password = input("Enter new password: ")
+def get_maximum():
+    celsius = [14, 15.1, 12.3]
+    maximum = max(celsius)
+    print(maximum)
+    return maximum
 
-result = {}
 
-if len(password) >= 8:
-    result["length"] = True
-else:
-    result["length"] = False
+celsius = get_maximum()
+fahrenheit = celsius * 1.8 + 32
 
-digit = False
-for i in password:
-    if i.isdigit():
-        digit = True
-
-result["digits"] = digit
-
-uppercase = False
-for i in password:
-    if i.isupper():
-        uppercase = True
-
-result["upper-case"] = uppercase
-
-if all(result.values()):
-    print("Strong Password")
-else:
-    print("Weak Password")
-
-print(result)
+print(fahrenheit)

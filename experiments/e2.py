@@ -1,8 +1,31 @@
-ids = ["XF345_89", "XER76849", "XA454_55"]
+def strength(password):
+    validations = []
 
-x = 0
+    long = False
+    if len(password) >= 8:
+        long = True
 
-for id in ids:
-    if '_' in id:
-        x = x + 1
-print(x)
+    upper_case = False
+    print(upper_case)
+    is_digit = False
+    print(is_digit)
+
+    for i in password:
+        if i.isdigit():
+            is_digit = True
+        if i.isupper():
+            upper_case = True
+
+    validations.append(upper_case)
+    validations.append(is_digit)
+    validations.append(long)
+
+    print(validations)
+
+    if all(validations):
+        return "Strong Password"
+
+    else:
+        return "Weak Password"
+
+print(strength("NhWD8Sqs5UKWHs4JTPH"))
