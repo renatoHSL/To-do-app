@@ -1,7 +1,7 @@
-date = input("Enter today's date: ")
-mood = input("How do you rate your mood today from 1 to 10? ")
-thoughts = input("Let your thoughts flow:\n")
-
-with open(f"journal/{date}.txt", 'w') as file:
-    file.write(mood + 2 * "\n")
-    file.write(thoughts)
+try:
+    total_value = float(input("Enter total value: "))
+    value = float(input("Enter value: "))
+    percentage = value / total_value * 100
+    print(f"That is {percentage}")
+except ValueError:
+    print("You need to enter a number. Run the program again")
