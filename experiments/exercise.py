@@ -1,8 +1,13 @@
-import random
+import FreeSimpleGUI as sg
 
-lower_bound = int(input("Enter the lower bound? "))
-upper_bound = int(input("Enter the upper bound: "))
+label = sg.Text("What are dolphins?")
+option1 = sg.Radio("Amphibians", group_id="question1")
+option2 = sg.Radio("Fish", group_id="question1")
+option3 = sg.Radio("Mammals", group_id="question1")
+option4 = sg.Radio("Birds", group_id="question1")
 
-random_number = random.randint(lower_bound, upper_bound)
+window = sg.Window("File Compressor",
+                   layout=[[label], [[option1],[option2],[option3],[option4]],])
 
-print(random_number)
+window.read()
+window.close()
