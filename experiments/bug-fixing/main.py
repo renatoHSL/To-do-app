@@ -1,13 +1,27 @@
-from parsers import parse
-import random
+import FreeSimpleGUI as sg
+from converters import converter
 
-# Ask the user to enter a lower and an upper bound divided by a comma
-user_input = input("Enter a lower bound and an uppwer bound divided a comma (e.g., 2,10)")
+label_feet = sg.Text("Enter feet:")
+input_feet = sg.InputText(key="feet")
+print(input_feet)
 
-# Parse the user string by calling the parse function
-parsed = parse(user_input)
+label_inches = sg.Text("Enter inches:")
+input_inches = sg.InputText(key="inches")
 
-# Pick a random int between the two numbers
-rand = random.randint(parsed['lower_bound'], parsed['upper_bound'])
+convert_button = sg.Button("Convert")
+output_label = sg.Text(key="output")
 
-print(rand)
+window = sg.Window("Convertor",
+                   layout=[[label_feet, input_feet],
+                           [label_inches, input_inches],
+                           [convert_button, output_label]])
+
+while True:
+    event, values = window.read()
+    user_input_feet = values['feet']
+    user_input_inches = values['inches']
+
+    converted_value = converter(user_input_feet, user_input_inches)
+    window["output"].update(value=f"{converted_value} m")
+
+window.close()
