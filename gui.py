@@ -45,6 +45,8 @@ while True:
             functions.write_todos(todos)
             window['todos'].update(values=todos)
             window['todo'].update(value='')
+        case "Exit":
+            break
         case 'todos':
             window['todo'].update(value=values['todos'][0])
         case sg.WIN_CLOSED:
