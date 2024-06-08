@@ -1,5 +1,5 @@
-from experiments.Converters14 import convert
-from experiments.Parses14 import parse
+from experiments.coding_exercise_feet.Converters14 import convert
+from experiments.coding_exercise_feet.Parses14 import parse
 
 feet_inches = input("Enter feet and inches: ")
 
